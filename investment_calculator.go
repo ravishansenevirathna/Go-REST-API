@@ -46,9 +46,9 @@ func main() {
 	fmt.Print("Enter your Second number : ")
 	fmt.Scan(&num2)
 	if num1 > num2 {
-		fmt.Println("Higest Number is :",num1)
+		fmt.Println("Maximum Number is :",num1)
 	}else{
-		fmt.Println("Higest Number is :",num2)
+		fmt.Println("Maximum Number is :",num2)
 	}
 	
 
