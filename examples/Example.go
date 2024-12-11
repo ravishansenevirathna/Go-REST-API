@@ -1,11 +1,12 @@
-package main
+package examples
 
 import (
 	"fmt"
 	"math"
 )
 
-func main() {
+func Invest() {
+
 	var investmentAmount = 1000
 	var expectedReturnRate = 5.5
 	var years = 10
