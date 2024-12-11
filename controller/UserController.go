@@ -36,14 +36,13 @@ func (c *UserController) CreateUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, createdUser)
 }
 
+// GetAllUsers handles the GET /users route
 func (c *UserController) GetAllUsers(ctx *gin.Context) {
-
-	createdUser, err := c.Service.GetAllUsers()
+	users, err := c.Service.GetAllUsers()
 	if err != nil {
-		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create user"})
+		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to fetch users"})
 		return
 	}
 
-	// Return the created user DTO as JSON response
-	ctx.JSON(http.StatusCreated, createdUser)
+	ctx.JSON(http.StatusOK, users) // Return the list of users as JSON
 }

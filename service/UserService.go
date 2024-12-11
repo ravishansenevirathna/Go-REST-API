@@ -34,20 +34,23 @@ func (s *UserService) CreateUser(userDto *dto.User) (*dto.User, error) {
 	return createdUserDto, nil
 }
 
-func (s *UserService) GetAllUsers() (*dto.User, error) {
-
-	user, err := s.Repo.GetAllUsers()
+// GetAllUsers gets all users and returns them as DTOs
+func (s *UserService) GetAllUsers() ([]dto.User, error) {
+	users, err := s.Repo.GetAllUsers() // Get all users from the repository
 	if err != nil {
-		return nil, err // Return error if save fails
+		return nil, err // Return error if something goes wrong
 	}
 
-	// Map the saved user model back to a DTO
-	createdUserDto := &dto.User{
-		ID:    user.ID,
-		Name:  user.Name,
-		Email: user.Email,
+	// Convert the models to DTOs
+	var userDTOs []dto.User
+	for _, user := range users {
+		userDTO := dto.User{
+			ID:    user.ID,
+			Name:  user.Name,
+			Email: user.Email,
+		}
+		userDTOs = append(userDTOs, userDTO)
 	}
 
-	// Return the created user DTO
-	return createdUserDto, nil
+	return userDTOs, nil
 }

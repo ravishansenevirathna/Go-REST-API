@@ -33,17 +33,12 @@ func (r *UserRepository) Save(userDto *dto.User) (*models.User, error) {
 	return &user, nil
 }
 
-func (r *UserRepository) GetAllUsers() (*models.User, error) {
-	// Convert userDto to models.User
-	user := models.User{
-		Name:  userDto.Name,
-		Email: userDto.Email,
+// GetAllUsers fetches all users from the database
+func (r *UserRepository) GetAllUsers() ([]models.User, error) {
+	var users []models.User                         // Declare a slice to hold all users
+	if err := r.DB.Find(&users).Error; err != nil { // Use Find to fetch all users
+		return nil, err // Return the error if any
 	}
 
-	if err := r.DB.FindAllUsers(&user).Error; err != nil {
-		return nil, err // Return the error if save fails
-	}
-
-	// Return the created user object
-	return &user, nil
+	return users, nil // Return the users list
 }
