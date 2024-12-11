@@ -33,3 +33,21 @@ func (s *UserService) CreateUser(userDto *dto.User) (*dto.User, error) {
 	// Return the created user DTO
 	return createdUserDto, nil
 }
+
+func (s *UserService) GetAllUsers() (*dto.User, error) {
+
+	user, err := s.Repo.GetAllUsers()
+	if err != nil {
+		return nil, err // Return error if save fails
+	}
+
+	// Map the saved user model back to a DTO
+	createdUserDto := &dto.User{
+		ID:    user.ID,
+		Name:  user.Name,
+		Email: user.Email,
+	}
+
+	// Return the created user DTO
+	return createdUserDto, nil
+}

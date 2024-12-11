@@ -35,6 +35,8 @@ func main() {
 	r := gin.Default()
 	r.POST("/users", userController.CreateUser)
 
+	r.GET("/getAllUsers", userController.GetAllUsers)
+
 	// Start the server
 	r.Run(":8080")
 }
