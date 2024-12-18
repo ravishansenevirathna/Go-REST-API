@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+	// Database DSN (Data Source Name)
 	dsn := "root:1234@tcp(127.0.0.1:3306)/rest_api?charset=utf8mb4&parseTime=True&loc=Local"
 
 	// Connect to MySQL
@@ -20,23 +21,47 @@ func main() {
 		log.Fatalf("Failed to connect to MySQL database: %v", err)
 	}
 
-	// Auto-migrate the User table
-	err = db.AutoMigrate(&models.User{})
+	// Auto-migrate the models
+	err = db.AutoMigrate(&models.User{}, &models.Song{}, &models.Playlist{})
 	if err != nil {
-		log.Fatalf("Failed to migrate User table: %v", err)
+		log.Fatalf("Failed to migrate database: %v", err)
 	}
 
-	// Initialize components
+	// Initialize User components
 	userRepo := repository.NewUserRepository(db)
 	userService := service.NewUserService(userRepo)
 	userController := controller.NewUserController(userService)
 
-	// Set up Gin routes
-	r := gin.Default()
-	r.POST("/users", userController.CreateUser)
+	// Initialize Song components
+	songRepo := repository.NewSongRepository(db)
+	songService := service.NewSongService(songRepo)
+	songController := controller.NewSongController(songService)
 
-	r.GET("/getAllUsers", userController.GetAllUsers)
+	// Initialize Playlist components
+	playlistRepo := repository.NewPlaylistRepository(db)
+	playlistService := service.NewPlaylistService(playlistRepo, songRepo)
+	playlistController := controller.NewPlaylistController(playlistService)
+
+	// Set up Gin routes
+	router := gin.Default()
+
+	// User Routes
+	router.POST("/users", userController.CreateUser)
+	router.GET("/getAllUsers", userController.GetAllUsers)
+
+	// Song Routes
+	router.POST("/saveSong", songController.CreateSong)
+	router.GET("/getAllSongs", songController.GetAllSongs)
+	router.GET("/getSongByID/:id", songController.GetSongByID)
+	router.PUT("/updateSong/:id", songController.UpdateSong)
+	router.DELETE("/deleteSong/:id", songController.DeleteSong)
+
+	// Playlist Routes
+	router.GET("/playlists", playlistController.GetAllPlaylists)
+	router.POST("/playlists", playlistController.CreatePlaylist)
+	router.POST("/playlists/:id/songs", playlistController.AddSongToPlaylist)
+	router.GET("/playlists/:id", playlistController.GetPlaylist)
 
 	// Start the server
-	r.Run(":8080")
+	router.Run(":8080")
 }

@@ -4,13 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="re 3rd commit">
+    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="song dev commit">
+      <change afterPath="$PROJECT_DIR$/controller/PlaylistController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/AddSongRequestDto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/CreatePlaylistRequestDto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/Playlist.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/PlaylistRepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/PlaylistService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/SongController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SongController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/SongDto.go" beforeDir="false" afterPath="$PROJECT_DIR$/dto/SongDto.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Song.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/Song.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/SongRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/SongRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/SongService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/SongService.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
   </component>
   <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../../Program Files/Go" />
   <component name="Git.Settings">
@@ -21,28 +40,32 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2q4Ej9Zp2oTGItlsiSCdg85BSeT" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
-    "git-widget-placeholder": "main",
-    "go.import.settings.migrated": "true",
-    "go.sdk.automatically.set": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -60,7 +83,8 @@
       <option name="presentableId" value="Default" />
       <updated>1733913582938</updated>
       <workItem from="1733913584292" duration="2425000" />
-      <workItem from="1734445911828" duration="383000" />
+      <workItem from="1734445911828" duration="781000" />
+      <workItem from="1734527982576" duration="5523000" />
     </task>
     <task id="LOCAL-00001" summary="REST-API GIN">
       <option name="closed" value="true" />
@@ -86,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733914609183</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="song dev commit">
+      <option name="closed" value="true" />
+      <created>1734446636921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1734446636921</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -96,7 +128,8 @@
     <MESSAGE value="REST-API GIN" />
     <MESSAGE value="re 2nd commit" />
     <MESSAGE value="re 3rd commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="re 3rd commit" />
+    <MESSAGE value="song dev commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="song dev commit" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
