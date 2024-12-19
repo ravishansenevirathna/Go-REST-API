@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="song dev commit">
-      <change afterPath="$PROJECT_DIR$/controller/PlaylistController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/AddSongRequestDto.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/CreatePlaylistRequestDto.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/Playlist.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repository/PlaylistRepository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/PlaylistService.go" afterDir="false" />
+    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="add playlist feature.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/SongController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/SongController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dto/SongDto.go" beforeDir="false" afterPath="$PROJECT_DIR$/dto/SongDto.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Song.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/Song.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/SongRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/SongRepository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/SongService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/SongService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/AddSongRequestDto.go" beforeDir="false" afterPath="$PROJECT_DIR$/dto/AddSongRequestDto.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +73,8 @@
       <updated>1733913582938</updated>
       <workItem from="1733913584292" duration="2425000" />
       <workItem from="1734445911828" duration="781000" />
-      <workItem from="1734527982576" duration="5523000" />
+      <workItem from="1734527982576" duration="5900000" />
+      <workItem from="1734607782694" duration="1096000" />
     </task>
     <task id="LOCAL-00001" summary="REST-API GIN">
       <option name="closed" value="true" />
@@ -118,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734446636921</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add playlist feature.">
+      <option name="closed" value="true" />
+      <created>1734537710885</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734537710885</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +127,8 @@
     <MESSAGE value="re 2nd commit" />
     <MESSAGE value="re 3rd commit" />
     <MESSAGE value="song dev commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="song dev commit" />
+    <MESSAGE value="add playlist feature." />
+    <option name="LAST_COMMIT_MESSAGE" value="add playlist feature." />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
