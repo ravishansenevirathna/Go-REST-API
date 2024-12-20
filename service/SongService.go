@@ -9,7 +9,6 @@ type SongService struct {
 	repo *repository.SongRepository
 }
 
-// Constructor
 func NewSongService(repo *repository.SongRepository) *SongService {
 	return &SongService{repo: repo}
 }
