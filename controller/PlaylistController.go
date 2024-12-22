@@ -17,7 +17,6 @@ func NewPlaylistController(service *service.PlaylistService) *PlaylistController
 	return &PlaylistController{service: service}
 }
 
-// GetAllPlaylists retrieves all playlists
 func (c *PlaylistController) GetAllPlaylists(ctx *gin.Context) {
 	playlists, err := c.service.GetAllPlaylists()
 	if err != nil {
@@ -28,7 +27,6 @@ func (c *PlaylistController) GetAllPlaylists(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, playlists)
 }
 
-// CreatePlaylist creates a new playlist
 func (c *PlaylistController) CreatePlaylist(ctx *gin.Context) {
 	var request dto.CreatePlaylistRequest
 	if err := ctx.ShouldBindJSON(&request); err != nil {
@@ -52,7 +50,6 @@ func (c *PlaylistController) CreatePlaylist(ctx *gin.Context) {
 	ctx.JSON(http.StatusCreated, playlist)
 }
 
-// AddSongToPlaylist adds a song to a playlist
 func (c *PlaylistController) AddSongToPlaylist(ctx *gin.Context) {
 	playlistID, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {
@@ -75,7 +72,6 @@ func (c *PlaylistController) AddSongToPlaylist(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"message": "Song added successfully"})
 }
 
-// GetPlaylist retrieves a single playlist by ID
 func (c *PlaylistController) GetPlaylist(ctx *gin.Context) {
 	playlistID, err := strconv.Atoi(ctx.Param("id"))
 	if err != nil {

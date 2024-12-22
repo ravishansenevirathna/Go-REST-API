@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="playlist check">
+    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="playlist check 1">
+      <change afterPath="$PROJECT_DIR$/controller/LikedSongController.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/LikeSongRequestDto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dto/LikedSongResponseDto.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/LikedSong.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/LikedSongRepository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/LikedSongService.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/PlaylistController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/PlaylistController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +83,8 @@
       <workItem from="1734527982576" duration="5900000" />
       <workItem from="1734607782694" duration="2053000" />
       <workItem from="1734655261285" duration="2562000" />
+      <workItem from="1734708663955" duration="465000" />
+      <workItem from="1734873434068" duration="953000" />
     </task>
     <task id="LOCAL-00001" summary="REST-API GIN">
       <option name="closed" value="true" />
@@ -124,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734609172556</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="playlist check 1">
+      <option name="closed" value="true" />
+      <created>1734708694773</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1734708694773</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +155,8 @@
     <MESSAGE value="song dev commit" />
     <MESSAGE value="add playlist feature." />
     <MESSAGE value="playlist check" />
-    <option name="LAST_COMMIT_MESSAGE" value="playlist check" />
+    <MESSAGE value="playlist check 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="playlist check 1" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

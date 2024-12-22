@@ -22,7 +22,7 @@ func main() {
 	}
 
 	// Auto-migrate the models
-	err = db.AutoMigrate(&models.User{}, &models.Song{}, &models.Playlist{})
+	err = db.AutoMigrate(&models.User{}, &models.Song{}, &models.Playlist{}, &models.LikedSong{})
 	if err != nil {
 		log.Fatalf("Failed to migrate database: %v", err)
 	}
@@ -41,6 +41,11 @@ func main() {
 	playlistRepo := repository.NewPlaylistRepository(db)
 	playlistService := service.NewPlaylistService(playlistRepo, songRepo)
 	playlistController := controller.NewPlaylistController(playlistService)
+
+	// Initialize Liked Songs components
+	likedSongRepo := repository.NewLikedSongRepository(db)
+	likedSongService := service.NewLikedSongService(likedSongRepo)
+	likedSongController := controller.NewLikedSongController(likedSongService)
 
 	// Set up Gin routes
 	router := gin.Default()
@@ -61,6 +66,10 @@ func main() {
 	router.POST("/playlists", playlistController.CreatePlaylist)
 	router.POST("/playlists/:id/songs", playlistController.AddSongToPlaylist)
 	router.GET("/playlists/:id", playlistController.GetPlaylist)
+
+	// Liked Songs Routes
+	router.POST("/likedSongs/like", likedSongController.LikeSong)
+	router.GET("/likedSongs/:userID", likedSongController.GetLikedSongs)
 
 	// Start the server
 	router.Run(":8080")
