@@ -17,6 +17,32 @@ func NewUserController(service *service.UserService) *UserController {
 	return &UserController{Service: service}
 }
 
+// SignUp handles the POST /signup route.
+//func (c *UserController) SignUp(ctx *gin.Context) {
+//	var user dto.User
+//	if err := ctx.ShouldBindJSON(&user); err != nil {
+//		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+//		return
+//	}
+//
+//	// Hash the user's password
+//	hashedPassword, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.DefaultCost)
+//	if err != nil {
+//		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to hash password"})
+//		return
+//	}
+//	user.Password = string(hashedPassword)
+//
+//	// Save the user
+//	_, err = c.Service.CreateUser(&user)
+//	if err != nil {
+//		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create user"})
+//		return
+//	}
+//
+//	ctx.JSON(http.StatusCreated, gin.H{"message": "User registered successfully"})
+//}
+
 // CreateUser handles the POST /users route.
 func (c *UserController) CreateUser(ctx *gin.Context) {
 	var user dto.User
