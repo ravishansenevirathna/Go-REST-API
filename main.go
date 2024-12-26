@@ -48,6 +48,9 @@ func main() {
 	likedSongService := service.NewLikedSongService(likedSongRepo)
 	likedSongController := controller.NewLikedSongController(likedSongService)
 
+	recommendationService := service.NewRecommendationService(userRepo, songRepo)
+	recommendationController := controller.NewRecommendationController(recommendationService)
+
 	// Set up Gin routes
 	router := gin.Default()
 
@@ -82,6 +85,12 @@ func main() {
 	{
 		likedSongsRoutes.POST("/like", Auth.JWTAuthMiddleware(), likedSongController.LikeSong)
 		likedSongsRoutes.GET("/:userID", Auth.JWTAuthMiddleware(), likedSongController.GetLikedSongs)
+	}
+
+	// Secure recommendations Songs Routes
+	recommendationSongsRoutes := router.Group("/recommendations")
+	{
+		recommendationSongsRoutes.POST("/like", Auth.JWTAuthMiddleware(), recommendationController.GetRecommendations)
 	}
 
 	// Start the server
