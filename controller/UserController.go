@@ -43,7 +43,6 @@ func NewUserController(service *service.UserService) *UserController {
 //	ctx.JSON(http.StatusCreated, gin.H{"message": "User registered successfully"})
 //}
 
-// CreateUser handles the POST /users route.
 func (c *UserController) CreateUser(ctx *gin.Context) {
 	var user dto.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
@@ -51,18 +50,34 @@ func (c *UserController) CreateUser(ctx *gin.Context) {
 		return
 	}
 
-	// Call the CreateUser method of UserService to create the user
 	createdUser, err := c.Service.CreateUser(&user)
 	if err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create user"})
 		return
 	}
 
-	// Return the created user DTO as JSON response
 	ctx.JSON(http.StatusCreated, createdUser)
 }
 
-// GetAllUsers handles the GET /users route
+func (c *UserController) LogIn(ctx *gin.Context) {
+	var user dto.User
+	if err := ctx.ShouldBindJSON(&user); err != nil {
+		ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+
+	authenticatedUser, token, err := c.Service.LoginUser(&user)
+	if err != nil {
+		ctx.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid credentials"})
+		return
+	}
+
+	ctx.JSON(http.StatusOK, gin.H{
+		"user":  authenticatedUser,
+		"token": token,
+	})
+}
+
 func (c *UserController) GetAllUsers(ctx *gin.Context) {
 	users, err := c.Service.GetAllUsers()
 	if err != nil {
@@ -70,5 +85,5 @@ func (c *UserController) GetAllUsers(ctx *gin.Context) {
 		return
 	}
 
-	ctx.JSON(http.StatusOK, users) // Return the list of users as JSON
+	ctx.JSON(http.StatusOK, users)
 }

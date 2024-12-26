@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="liked songs feature updated">
+    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="edit main - Christmas Eve">
+      <change afterPath="$PROJECT_DIR$/Auth/AuthMiddleware.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/JwtGenerator.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/UserController.go" beforeDir="false" afterPath="$PROJECT_DIR$/controller/UserController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dto/UserDto.go" beforeDir="false" afterPath="$PROJECT_DIR$/dto/UserDto.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/User.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/UserRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repository/UserRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/UserService.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/UserService.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,9 @@
       <workItem from="1734708663955" duration="465000" />
       <workItem from="1734873434068" duration="1348000" />
       <workItem from="1734965652137" duration="787000" />
-      <workItem from="1735140109249" duration="411000" />
+      <workItem from="1735140109249" duration="1117000" />
+      <workItem from="1735189098256" duration="5290000" />
+      <workItem from="1735229453878" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="REST-API GIN">
       <option name="closed" value="true" />
@@ -157,7 +160,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734965752054</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="edit main - Christmas Eve">
+      <option name="closed" value="true" />
+      <created>1735140600279</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1735140600279</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +184,8 @@
     <MESSAGE value="playlist check 1" />
     <MESSAGE value="liked songs feature" />
     <MESSAGE value="liked songs feature updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="liked songs feature updated" />
+    <MESSAGE value="edit main - Christmas Eve" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit main - Christmas Eve" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

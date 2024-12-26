@@ -5,6 +5,7 @@ import (
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"log"
+	"rest-api/Auth"
 	"rest-api/controller"
 	"rest-api/models"
 	"rest-api/repository"
@@ -50,26 +51,38 @@ func main() {
 	// Set up Gin routes
 	router := gin.Default()
 
-	// User Routes
-	router.POST("/users", userController.CreateUser)
-	router.GET("/getAllUsers", userController.GetAllUsers)
+	// Secure User Routes
+	userRoutes := router.Group("/users")
+	{
+		userRoutes.GET("/getAllUsers", Auth.JWTAuthMiddleware(), userController.GetAllUsers)
+		userRoutes.POST("/logIn", userController.LogIn)       // No auth required for login
+		userRoutes.POST("/signIn", userController.CreateUser) // No auth required for sign-up
+	}
 
-	// Song Routes
-	router.POST("/saveSong", songController.CreateSong)
-	router.GET("/getAllSongs", songController.GetAllSongs)
-	router.GET("/getSongByID/:id", songController.GetSongByID)
-	router.PUT("/updateSong/:id", songController.UpdateSong)
-	router.DELETE("/deleteSong/:id", songController.DeleteSong)
+	// Secure Song Routes
+	songRoutes := router.Group("/songs")
+	{
+		songRoutes.POST("/saveSong", Auth.JWTAuthMiddleware(), songController.CreateSong)
+		songRoutes.GET("/getAllSongs", Auth.JWTAuthMiddleware(), songController.GetAllSongs)
+		songRoutes.GET("/getSongByID/:id", Auth.JWTAuthMiddleware(), songController.GetSongByID)
+		songRoutes.PUT("/updateSong/:id", Auth.JWTAuthMiddleware(), songController.UpdateSong)
+		songRoutes.DELETE("/deleteSong/:id", Auth.JWTAuthMiddleware(), songController.DeleteSong)
+	}
 
-	// Playlist Routes
-	router.GET("/playlists", playlistController.GetAllPlaylists)
-	router.POST("/playlists", playlistController.CreatePlaylist)
-	router.POST("/playlists/:id/songs", playlistController.AddSongToPlaylist)
-	router.GET("/playlists/:id", playlistController.GetPlaylist)
+	playlistRoutes := router.Group("/playlists")
+	{
+		playlistRoutes.GET("", Auth.JWTAuthMiddleware(), playlistController.GetAllPlaylists)
+		playlistRoutes.POST("", Auth.JWTAuthMiddleware(), playlistController.CreatePlaylist)
+		playlistRoutes.POST("/:id/songs", Auth.JWTAuthMiddleware(), playlistController.AddSongToPlaylist)
+		playlistRoutes.GET("/:id", Auth.JWTAuthMiddleware(), playlistController.GetPlaylist)
+	}
 
-	// Liked Songs Routes
-	router.POST("/likedSongs/like", likedSongController.LikeSong)
-	router.GET("/likedSongs/:userID", likedSongController.GetLikedSongs)
+	// Secure Liked Songs Routes
+	likedSongsRoutes := router.Group("/likedSongs")
+	{
+		likedSongsRoutes.POST("/like", Auth.JWTAuthMiddleware(), likedSongController.LikeSong)
+		likedSongsRoutes.GET("/:userID", Auth.JWTAuthMiddleware(), likedSongController.GetLikedSongs)
+	}
 
 	// Start the server
 	router.Run(":8080")
