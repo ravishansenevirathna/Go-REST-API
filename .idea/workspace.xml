@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="add middleware">
-      <change afterPath="$PROJECT_DIR$/controller/RecommendationController.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repository/RecommendationRepository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/RecommendationService.go" afterDir="false" />
+    <list default="true" id="c72d2a6f-9ce6-49e4-a515-65e0dc1a2e1b" name="Changes" comment="add RecommendationFeature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <workItem from="1735189098256" duration="5290000" />
       <workItem from="1735229453878" duration="1767000" />
       <workItem from="1735232373018" duration="520000" />
-      <workItem from="1735232909359" duration="446000" />
+      <workItem from="1735232909359" duration="862000" />
     </task>
     <task id="LOCAL-00001" summary="REST-API GIN">
       <option name="closed" value="true" />
@@ -176,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735232141052</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add RecommendationFeature">
+      <option name="closed" value="true" />
+      <created>1735233704709</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1735233704709</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +198,8 @@
     <MESSAGE value="liked songs feature updated" />
     <MESSAGE value="edit main - Christmas Eve" />
     <MESSAGE value="add middleware" />
-    <option name="LAST_COMMIT_MESSAGE" value="add middleware" />
+    <MESSAGE value="add RecommendationFeature" />
+    <option name="LAST_COMMIT_MESSAGE" value="add RecommendationFeature" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
